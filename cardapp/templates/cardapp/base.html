@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD-PROJECT</title>
+    <link rel="stylesheet" href="{% static 'cardapp/css/style.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center alert alert-danger">Function Based View ModelFrom CARD Project</h2>
+        
+        {% block container %} {% endblock container %}
+    </div>
+    
+    <script src="{% static 'cardapp/js/bootstrap.js' %}"></script>
+    <script src="{% static 'cardapp/js/jquery.js' %}"></script>
+    <script src="{% static 'cardapp/js/popper.js' %}"></script>
+</body>
+</html>
