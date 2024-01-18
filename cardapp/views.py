@@ -28,7 +28,16 @@ def cardapp(request):
 
 # Thid Fucntion will Edit Items
 def update_data(request, id):
-    return render(request,'cardapp/updatedata.html',{'id':id})
+    if request.method == 'POST':
+        p= User.objects.get(pk=id)
+        fm=formsdata(request.POST, instance=p)
+        if fm.is_valid():
+            fm.save()
+    else:
+        p= User.objects.get(pk=id)
+        fm=formsdata(instance=p)
+            
+    return render(request,'cardapp/updatedata.html',{'frm':fm})
 
 # This Function will Remove Items
 def remove_data(request,id):

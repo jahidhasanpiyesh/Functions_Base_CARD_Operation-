@@ -20,7 +20,7 @@ from cardapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.cardapp, name ='Data_add'),
+    path('', views.cardapp, name ='Data_add_show'),
     path('delete/<int:id>/', views.remove_data, name ='delete_item'),
     path('<int:id>/', views.update_data, name ='update_data'),
 ]

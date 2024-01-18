@@ -1,5 +1,14 @@
 {% extends "cardapp/base.html" %}
 {% block container %} 
-<h2>Updata Data</h2>
-{{id}}
+<div class="row">
+    <div class="col-sm-8 offset-2">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h4 class='text-center alert alert-info'>Student Informations</h4>
+            {{frm}} <br>
+            <input type="submit" class='btn btn-success' value="Update">
+            <a href="{% url 'Data_add_show' %}" class='btn btn-info'>Back</a>
+        </form>
+    </div>
+</div>
 {% endblock container %} 
