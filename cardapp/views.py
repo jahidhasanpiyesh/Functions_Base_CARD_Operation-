@@ -1,47 +1,32 @@
 from django.shortcuts import render,HttpResponseRedirect
-from .forms import formsdata
+from .forms import StudentForms
 from .models import User
 # Create your views here.
-
-# This Function will Add new items/data and Show all items/data
-def cardapp(request):
+def addandshow(request):
     if request.method == 'POST':
-        S = formsdata(request.POST)
-        if S.is_valid():
-            # Sort Way data Save ()
-            S.save()
-            
-            # From data submit then blank froms 
-            S = formsdata()
-            # # one one Data gat and Cleand data Save format 
-            # nm = S.cleaned_data['name']
-            # em = S.cleaned_data['email']
-            # pw = S.cleaned_data['password']
-            # save_data =User(name=nm,email=em,password=pw)
-            # save_data.save()               
+        F = StudentForms(request.POST)
+        if F.is_valid():
+            F.save()
+        F = StudentForms() 
     else:
-        S = formsdata()
-        
-    all_data = User.objects.all()
-    return render(request,'cardapp/addandshow.html',{'from':S,'data':all_data})
+        F = StudentForms() 
+    data = User.objects.all()
+    return render(request, 'cardapp/addandshow.html',{'fm': F,'show': data})
 
-
-# Thid Fucntion will Edit Items
-def update_data(request, id):
+def remove(request, id):
     if request.method == 'POST':
-        p= User.objects.get(pk=id)
-        fm=formsdata(request.POST, instance=p)
-        if fm.is_valid():
-            fm.save()
-    else:
-        p= User.objects.get(pk=id)
-        fm=formsdata(instance=p)
-            
-    return render(request,'cardapp/updatedata.html',{'frm':fm})
-
-# This Function will Remove Items
-def remove_data(request,id):
-    if request.method == 'POST':
-        pi = User.objects.get(pk=id)
-        pi.delete()
+        R = User.objects.get(pk = id)
+        R.delete()
         return HttpResponseRedirect('/')
+
+def update(request, id):
+    if request.method == 'POST':
+        U = StudentForms(request.POST)
+        P = User.objects.get(pk = id)
+        U = StudentForms(request.POST, instance = P)
+        if U.is_valid():
+            U.save()
+    else:
+        Z = User.objects.get(pk = id)
+        U = StudentForms(instance = Z)
+    return render(request,'cardapp/update.html',{'update': U})

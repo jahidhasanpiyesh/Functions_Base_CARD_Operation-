@@ -2,5 +2,5 @@ from django.contrib import admin
 from .models import User
 # Register your models here.
 @admin.register(User)
-class Register(admin.ModelAdmin):
-    list_display=('id','name','email','password')
+class User_register(admin.ModelAdmin):
+    list_display=('name','email','password')
