@@ -6,8 +6,8 @@ Project Help TEXT
 * Django Project Create
 * App Create
 * Project App Create
-Static
-  Templates
+  - Static
+  - Templates
   Forms.py
   
 * Static
