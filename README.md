@@ -6,9 +6,9 @@ Project Help TEXT
 * Django Project Create
 * App Create
 * Project App Create
-  Static
-  Templates
-  Forms.py
+  /Static
+  /Templates
+  /Forms.py
   
 * Static
   Add to Bootstrap.css Files
