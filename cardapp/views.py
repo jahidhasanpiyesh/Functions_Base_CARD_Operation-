@@ -1,13 +1,17 @@
 from django.shortcuts import render,HttpResponseRedirect
 from .forms import StudentForms
 from .models import User
+from django.contrib import messages
 # Create your views here.
 def addandshow(request):
     if request.method == 'POST':
         F = StudentForms(request.POST)
         if F.is_valid():
             F.save()
-        F = StudentForms() 
+        F = StudentForms()
+        
+        # New add to messages options ----------------
+        messages.add_message(request, messages.SUCCESS,'Your Student Information Has Been Created !')
     else:
         F = StudentForms() 
     data = User.objects.all()

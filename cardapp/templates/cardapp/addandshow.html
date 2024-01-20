@@ -8,7 +8,15 @@
             {{fm}} <br>
             <input type="submit" class=' btn btn-success' value="Submit">
         </form>
-        
+        <br>
+
+        {% comment %} --------------- Use to messages new update topic ---------- {% endcomment %}
+        {% if messages %} 
+        {% for message in messages %}
+        <span class='alert alert-success'>{{message}}</span>
+        {% endfor %}
+        {% endif %}
+    
     </div>
     <div class="col-sm-7 offset-1">
         <h4 class='text-center alert alert-success'>Show Student All Information</h4>
