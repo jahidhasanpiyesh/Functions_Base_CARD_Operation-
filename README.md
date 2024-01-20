@@ -53,7 +53,8 @@ Project Help TEXT
   - Use to primary key
   - Fixing Data delete
   - Import HttpResponseRedirect
-  
-  
+
+* Update This Code
+  - Add to New message Option's 
   
   
