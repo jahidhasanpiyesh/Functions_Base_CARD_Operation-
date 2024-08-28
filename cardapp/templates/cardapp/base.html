@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student DataBase</title>
+    <link rel="stylesheet" href="{% static 'cardapp/css/bootstrap.css' %}">
+</head>
+<body style="background-color: rgb(144, 152, 202);">
+   <div class="container mt-4">
+    <h1 class = 'text-center alert alert-danger'>Function Base CARD Operation</h1>
+   
+    {% block container %} {% endblock container %}
+    </div>
+    
+    <script src="{% static 'cardapp/js/bootstrap.js' %}"></script>
+    <script src="{% static 'cardapp/js/jquery.js' %}"></script>
+    <script src="{% static 'cardapp/js/popper.js' %}"></script>
+</body>
+</html>
